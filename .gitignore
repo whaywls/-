@@ -1,0 +1,6 @@
+# 홈페이지에 필요한 파일만 업로드합니다
+/*
+!/index.html
+!/images/
+!/.gitignore
+!/.nojekyll

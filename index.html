@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세무회계 센츄리 | 양도세·증여세·상속세 전문</title>
+<meta name="description" content="'분석하는 세무사' 세무회계 센츄리. 양도세·증여세·상속세 신고대리, 사전 컨설팅, 경정청구, 조세불복. 기장 업무는 진행하지 않습니다.">
+<meta property="og:title" content="세무회계 센츄리 | 양도세·증여세·상속세 전문">
+<meta property="og:description" content="양도·상속·증여, 직원이 검토하지 않습니다. 대표 세무사가 직접 분석하고 응대합니다.">
+<meta property="og:image" content="images/logo.png">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap">
+<style>
+:root{
+  --ink:#1A1714; --ink-2:#45403B; --ink-3:#6B635C; --line:#E8E2DC;
+  --bg-soft:#F7F4F1; --red:#AE3A1F; --red-dark:#8E2E17; --gold:#F6C445;
+  --kakao:#FEE500; --kakao-ink:#191600;
+  --sans:'Noto Sans KR', system-ui, -apple-system, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;word-break:keep-all;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+section{padding:88px 0}
+.h2{font-weight:900;font-size:clamp(26px,3.4vw,40px);line-height:1.35;letter-spacing:-.02em}
+.lead{font-size:18px;color:var(--ink-2)}
+.head{display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
+.head.center{align-items:center;text-align:center}
+.tag{align-self:flex-start;display:inline-block;background:var(--red);color:#fff;font-weight:900;font-size:15px;padding:4px 14px}
+.center .tag{align-self:center}
+.under{background:linear-gradient(transparent 70%, rgba(174,58,31,.25) 70%)}
+.hl{background:var(--red);color:#fff;padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:17px;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(26,23,20,.15)}
+.btn-kakao{background:var(--kakao);color:var(--kakao-ink)}
+.btn-red{background:var(--red);color:#fff}
+.btn-white{background:#fff;color:var(--red)}
+.btn-naver{background:#03C75A;color:#fff}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Header */
+.header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:80px}
+.logo img{height:60px;width:auto}
+.nav{display:flex;gap:32px;font-weight:700;font-size:16px}
+.nav a{padding:10px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--red);border-color:var(--red)}
+.header .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+/* Hero – red bokeh */
+.hero{position:relative;overflow:hidden;color:#fff;padding:96px 0;background:
+  radial-gradient(circle at 18% 30%, rgba(255,170,90,.28) 0 6%, transparent 7%),
+  radial-gradient(circle at 12% 72%, rgba(255,150,80,.18) 0 9%, transparent 10%),
+  radial-gradient(circle at 40% 55%, rgba(255,190,120,.16) 0 7%, transparent 8%),
+  radial-gradient(circle at 30% 40%, rgba(120,30,10,.45), transparent 40%),
+  radial-gradient(circle at 75% 20%, rgba(255,160,90,.12) 0 5%, transparent 6%),
+  linear-gradient(120deg,#9C3018,#B23D20 55%,#A8381D)}
+.hero .wrap{display:flex;flex-direction:column;gap:24px;position:relative}
+.hero .eyebrow{color:var(--gold);font-weight:700;font-size:17px}
+.hero h1{font-weight:900;font-size:clamp(34px,5.4vw,64px);line-height:1.22;letter-spacing:-.03em}
+.hero h1 .box{display:inline-block;background:#fff;color:var(--red);padding:2px 14px;margin-top:8px}
+.hero p{font-size:18px;color:#FBE7DF;max-width:620px}
+.hero p b{color:var(--gold)}
+.stats{display:flex;flex-wrap:wrap;gap:12px 40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.25);margin-top:4px}
+.stats b{font-size:26px;font-weight:900;color:#fff;margin-right:8px}
+.stats span{font-size:15px;color:#F4D3C7}
+
+/* Cases */
+.cases{background:var(--bg-soft)}
+.case-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.case{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .15s}
+.case:hover{box-shadow:0 10px 24px rgba(26,23,20,.1)}
+.case-img{height:200px;background:#fff;border-bottom:1px solid var(--line);overflow:hidden}
+.case-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.case-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:4px}
+.case-body small{font-size:14px;color:var(--ink-3)}
+.case-body strong{font-size:24px;font-weight:900;color:var(--red);letter-spacing:-.01em}
+.cases-note{margin-top:20px;font-size:14px;color:var(--ink-3)}
+
+/* About */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;margin-bottom:56px}
+.intro-quote{font-size:clamp(20px,2.2vw,24px);line-height:1.7;color:var(--ink-2)}
+.intro-quote b{color:var(--ink)}
+.intro-quote .red{color:var(--red);font-weight:900}
+.points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.point{border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.point h3{align-self:flex-start;background:var(--red);color:#fff;font-size:19px;font-weight:900;padding:4px 14px}
+.point p{font-size:16px;color:var(--ink-2)}
+.point p b{color:var(--ink)}
+.point p .red{color:var(--red);font-weight:700}
+.career{margin-top:32px;border-top:1px solid var(--line);padding-top:24px;font-size:16px;color:var(--ink-2)}
+.career h3{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.career ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+
+/* Promise band */
+.band{background:var(--ink);color:#fff;text-align:center}
+.band h2{font-weight:900;font-size:clamp(24px,3.4vw,40px);line-height:1.4;letter-spacing:-.02em}
+.band h2 em{font-style:normal;color:var(--gold)}
+.band p{margin-top:18px;font-size:18px;color:#D9D2CB}
+
+/* Scope */
+.scope{background:var(--bg-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 16px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:15px}
+.svc-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.svc span{font-size:14px;font-weight:900;color:var(--red)}
+.svc h3{font-size:20px;line-height:1.4;font-weight:900}
+.svc h3 small{display:block;font-size:15px;font-weight:500;color:var(--ink-3)}
+.nobook{margin-top:20px;border:2px solid var(--red);background:#fff;border-radius:18px;padding:22px 26px;display:flex;gap:16px;align-items:center}
+.nobook b{font-size:20px;color:var(--red);font-weight:900}
+.nobook p{font-size:15px;color:var(--ink-2);margin-top:2px}
+
+/* Reserve */
+.reserve .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:start}
+.reserve-side{display:flex;flex-direction:column;gap:18px}
+.reserve-side .note{font-size:16px;color:var(--ink-2);background:var(--bg-soft);border-left:4px solid var(--red);padding:14px 16px}
+.form{background:var(--bg-soft);border-radius:24px;padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;gap:20px}
+.field{display:flex;flex-direction:column;gap:8px;border:0;margin:0;padding:0}
+.field > label,.field legend{font-weight:700;font-size:16px;padding:0}
+.field legend{margin-bottom:8px}
+.req{color:var(--red)}
+.input{width:100%;min-height:52px;padding:12px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font:inherit;font-size:16px;color:var(--ink)}
+.input:focus{outline:none;border-color:var(--ink)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-weight:700;font-size:16px;cursor:pointer}
+.opt input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+.opt input:focus-visible + span{outline:2px solid var(--red);outline-offset:2px}
+.times{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.times .opt span{width:100%;justify-content:center;padding:0}
+.fee{background:#fff;border:1.5px solid var(--red);border-radius:12px;padding:14px 16px;font-size:15px;color:var(--ink-2)}
+.fee b{display:block;color:var(--red);font-size:16px;margin-bottom:2px}
+.fee strong{color:var(--ink)}
+textarea.input{min-height:96px;resize:vertical;line-height:1.6}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink-2)}
+.agree input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--ink);flex:none}
+.form .btn{width:100%}
+.msg{display:none;padding:14px 16px;border-radius:12px;font-size:16px;font-weight:700}
+.msg.ok{display:block;background:#E8F5EC;color:#1F6B3A}
+.msg.err{display:block;background:#FDECEA;color:var(--red-dark)}
+
+/* Footer */
+.footer{background:var(--ink);color:#CFC7BF;padding:44px 0 52px;font-size:14px;line-height:1.8}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+.footer b{font-size:19px;color:#fff;display:block;margin-bottom:8px}
+.foot-links{display:flex;gap:20px}
+.foot-links a{color:#fff;font-weight:700;padding:8px 0}
+.mbar{display:none}
+
+@media (max-width:960px){
+  .nav{display:none}
+  .intro,.reserve .wrap{grid-template-columns:1fr;gap:32px}
+  .case-list,.svc-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .points{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px;padding-bottom:78px}
+  html{scroll-padding-top:68px}
+  .wrap{padding:0 20px}
+  section{padding:56px 0}
+  .head{margin-bottom:28px}
+  .header .wrap{min-height:66px}
+  .logo img{height:50px}
+  .lead,.hero p,.band p{font-size:16px}
+  .hero{padding:52px 0}
+  .hero .btn-row{display:none}
+  .stats{flex-direction:column;gap:6px}
+  .stats b{font-size:22px}
+  .case-list{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 6px;gap:12px}
+  .case{flex:0 0 80%;scroll-snap-align:start}
+  .case-img{height:180px}
+  .case-body strong{font-size:22px}
+  .intro{margin-bottom:32px}
+  .point{padding:22px}
+  .svc{padding:18px}
+  .svc h3{font-size:18px}
+  .nobook{padding:18px;align-items:flex-start}
+  .nobook b{font-size:18px}
+  .reserve-side .btn{width:100%}
+  .mbar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding:10px 10px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 16px rgba(26,23,20,.08)}
+  .mbar a{display:flex;align-items:center;justify-content:center;min-height:54px;border-radius:12px;font-weight:700;font-size:15px}
+  .mbar .k{background:var(--kakao);color:var(--kakao-ink)}
+  .mbar .r{background:var(--red);color:#fff}
+  .mbar .b{background:#03C75A;color:#fff}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="세무회계 센츄리 홈"><img src="images/logo.png" alt="세무회계 센츄리 TAX CONSULTING CENTURY"></a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#top">홈</a>
+      <a href="#about">소개</a>
+      <a href="#scope">업무범위</a>
+      <a href="#reserve">상담예약</a>
+    </nav>
+    <a class="btn btn-kakao" data-link="kakao" href="#" target="_blank" rel="noopener">카톡 상담</a>
+  </div>
+</header>
+
+<main>
+
+<!-- 홈 -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">'분석하는 세무사' 세무회계 센츄리</span>
+    <h1>양도 · 상속 · 증여<br><span class="box">직원이 검토하지 않습니다.</span></h1>
+    <p><b>대표 세무사 + 총괄 본부장</b>이 직접 회의를 거쳐 검토하고 분석하며, <b>일일 상담건수 제한</b>을 두어 한 분 한 분 개별 특화된 전략을 세웁니다.</p>
+    <div class="btn-row">
+      <a class="btn btn-kakao" data-link="kakao" href="#" target="_blank" rel="noopener">카카오톡 상담</a>
+      <a class="btn btn-white" href="#reserve">전화상담 예약</a>
+      <a class="btn btn-naver" data-link="blog" href="#" target="_blank" rel="noopener">블로그 보기</a>
+    </div>
+    <div class="stats">
+      <div><b>1,200%</b><span>재산세제 수임 증가</span></div>
+      <div><b>1,000건+</b><span>세금 신고 경험</span></div>
+      <div><b>100%</b><span>대표 세무사 직접 응대</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 절세 사례 -->
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">절세 사례</span>
+      <h2 class="h2">결과로 증명합니다.</h2>
+    </div>
+    <div class="case-list">
+      <a class="case" href="images/case-1.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-1.png" alt="양도소득세 감면세액 1억 원 신고서" loading="lazy"></div>
+        <div class="case-body"><small>양도소득세 · 감면 적용</small><strong>1억 원 절세</strong></div>
+      </a>
+      <a class="case" href="images/case-2.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-2.png" alt="양도소득세 경정청구서 환급세액 136,862,083원" loading="lazy"></div>
+        <div class="case-body"><small>양도소득세 · 경정청구</small><strong>1.4억 원 환급</strong></div>
+      </a>
+      <a class="case" href="images/case-3.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-3.png" alt="입주권 비과세 특례와 농어촌주택 특례 중첩 경정청구 환급세액 150,548,290원" loading="lazy"></div>
+        <div class="case-body"><small>비과세 특례 중첩 · 경정청구</small><strong>1.5억 원 환급</strong></div>
+      </a>
+      <a class="case" href="images/case-4.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-4.png" alt="양도소득세 가산세 포함 283,561,295원 절세" loading="lazy"></div>
+        <div class="case-body"><small>양도소득세 · 가산세 포함</small><strong>2.8억 원 절세</strong></div>
+      </a>
+    </div>
+    <p class="cases-note">* 개인정보는 가림 처리되었습니다. 카드를 누르면 원본 이미지를 볼 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- 소개 -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="intro">
+      <div class="head" style="margin:0">
+        <span class="tag">소개</span>
+        <h2 class="h2">'분석하는 세무사'<br><span class="under">세무회계 센츄리</span>를 소개합니다.</h2>
+      </div>
+      <p class="intro-quote">세무회계 센츄리는 <b>'진짜 분석'</b>을 기반으로 철저히 다진 시스템과 확고한 철학으로 운영하며, 모든 온라인 상담은 철저한 검토 및 분석 후 <span class="red">대표 세무사가 직접 응대해 드립니다.</span></p>
+    </div>
+
+    <div class="points">
+      <div class="point">
+        <h3>① 진짜 분석</h3>
+        <p>지금은 천편일률적인 세무 전략의 시대가 아닙니다. 개개인의 상황을 세부적으로 파악해 <b>맞춤 특화된 1:1 세무전략</b>을 세웁니다.</p>
+      </div>
+      <div class="point">
+        <h3>② 진짜 가치</h3>
+        <p><span class="red">세무서비스는 저렴하다고 좋은 것이 아닙니다.</span> 법의 테두리 안에서 <b>최소한의 리스크로 최대한의 절세</b>를 이끌어 냅니다.</p>
+      </div>
+      <div class="point">
+        <h3>③ 진짜 절세</h3>
+        <p><span class="red">불가능한 허풍성 마케팅으로 고객의 환심을 사지 않습니다.</span> 실제로 <b>적용해볼 수 있는 전략</b>을 세웁니다.</p>
+      </div>
+    </div>
+
+    <div class="career">
+      <h3>조묘진 대표 세무사</h3>
+      <ul>
+        <li>現) 세무회계센츄리</li>
+        <li>前) 세무법인다솔 1지점 근무</li>
+        <li>前) 세무법인혜움 근무</li>
+        <li>前) 세무법인더원 근무</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 약속 -->
+<section class="band">
+  <div class="wrap">
+    <h2>이제 <em>'진짜 분석'</em>이 없다면<br>세금을 이길 수 없는 시대입니다.</h2>
+    <p>개개인 상황에 알맞는 전문적 조언을 약속합니다.</p>
+  </div>
+</section>
+
+<!-- 업무범위 -->
+<section class="scope" id="scope">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">업무범위</span>
+      <h2 class="h2">양도 · 증여 · 상속만 다룹니다.</h2>
+      <div class="chips"><span class="chip">양도세</span><span class="chip">증여세</span><span class="chip">상속세</span></div>
+    </div>
+    <div class="svc-list">
+      <div class="svc"><span>01</span><h3>신고대리</h3></div>
+      <div class="svc"><span>02</span><h3>사전 컨설팅<small>세액 가계산</small></h3></div>
+      <div class="svc"><span>03</span><h3>경정청구<small>과다 납부 세금 환급</small></h3></div>
+      <div class="svc"><span>04</span><h3>조세불복<small>이의신청 · 심사 · 심판</small></h3></div>
+    </div>
+    <div class="nobook" role="note">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#AE3A1F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="flex:none"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+      <div>
+        <b>기장 업무는 진행하지 않습니다.</b>
+        <p>종합소득세 · 부가가치세 · 법인세 등 기장은 받지 않고, 양도 · 증여 · 상속에만 집중합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 상담예약 -->
+<section class="reserve" id="reserve">
+  <div class="wrap">
+    <div class="reserve-side">
+      <span class="tag">상담예약</span>
+      <h2 class="h2">한 분 한 분<br>상세하게 검토합니다.</h2>
+      <p class="lead">희망 시간대를 남겨 주시면 대표 세무사가 직접 연락드립니다.</p>
+      <p class="note">카톡으로 문의 메시지를 남겨 주시면, 한 분 한 분 순차적으로 상세히 검토 후 답변드립니다.</p>
+      <a class="btn btn-kakao" data-link="kakao" href="#" target="_blank" rel="noopener" style="align-self:flex-start">카카오톡으로 문의하기</a>
+    </div>
+
+    <form class="form" id="reserveForm" novalidate>
+      <div class="field">
+        <label for="f-name">성함 <span class="req">*</span></label>
+        <input class="input" id="f-name" name="성함" type="text" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-phone">연락처 <span class="req">*</span></label>
+        <input class="input" id="f-phone" name="연락처" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000">
+      </div>
+      <fieldset class="field">
+        <legend>상담 세목 <span class="req">*</span></legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="세목" value="양도세"><span>양도세</span></label>
+          <label class="opt"><input type="radio" name="세목" value="증여세"><span>증여세</span></label>
+          <label class="opt"><input type="radio" name="세목" value="상속세"><span>상속세</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="field">
+        <legend>희망 시간대 <span class="req">*</span></legend>
+        <div class="opts times">
+          <label class="opt"><input type="radio" name="희망시간대" value="오전 10시"><span>10:00</span></label>
+          <label class="opt"><input type="radio" name="희망시간대" value="오전 11시"><span>11:00</span></label>
+          <label class="opt"><input type="radio" name="희망시간대" value="오후 12시"><span>12:00</span></label>
+          <label class="opt"><input type="radio" name="희망시간대" value="오후 1시"><span>13:00</span></label>
+          <label class="opt"><input type="radio" name="희망시간대" value="오후 2시"><span>14:00</span></label>
+          <label class="opt"><input type="radio" name="희망시간대" value="오후 3시"><span>15:00</span></label>
+          <label class="opt"><input type="radio" name="희망시간대" value="오후 4시"><span>16:00</span></label>
+          <label class="opt"><input type="radio" name="희망시간대" value="오후 5시"><span>17:00</span></label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="f-memo">간단한 문의 내용</label>
+        <textarea class="input" id="f-memo" name="문의내용" rows="3" maxlength="300" placeholder="예) 아파트 양도 예정인데 1세대 1주택 비과세가 되는지 궁금합니다."></textarea>
+      </div>
+      <div class="fee">
+        <b>상담 수수료 안내</b>
+        <p>전화상담 수수료는 <strong>11만 원</strong>이며, <strong>세액 산정은 별도 수수료</strong>가 발생합니다.</p>
+      </div>
+      <label class="agree"><input type="checkbox" id="f-fee" name="수수료안내확인" value="확인"><span>상담 수수료(11만 원) 및 세액 산정 별도 수수료 안내를 확인했습니다. <span class="req">*</span></span></label>
+      <label class="agree"><input type="checkbox" id="f-agree" name="개인정보동의" value="동의"><span>상담 연락을 위한 개인정보(성함, 연락처) 수집·이용에 동의합니다. 상담 목적으로만 사용 후 파기합니다. <span class="req">*</span></span></label>
+      <div class="msg" id="formMsg" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-red">예약 신청</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <b>세무회계 센츄리</b>
+      경기도 파주시 경의로 1246, 11층 슈가맨워크 3호 (와동동, 유은타워 8차)<br>
+      사업자등록번호 444-04-02958<br>
+      © 세무회계 센츄리. All rights reserved.
+    </div>
+    <nav class="foot-links" aria-label="바로가기">
+      <a data-link="blog" href="#" target="_blank" rel="noopener">블로그</a>
+      <a data-link="kakao" href="#" target="_blank" rel="noopener">카카오톡</a>
+      <a href="#reserve">상담예약</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="빠른 상담">
+  <a class="k" data-link="kakao" href="#" target="_blank" rel="noopener">카톡 상담</a>
+  <a class="r" href="#reserve">전화 예약</a>
+  <a class="b" data-link="blog" href="#" target="_blank" rel="noopener">블로그</a>
+</nav>
+
+<script>
+/* ===== 링크 설정: 여기만 바꾸면 모든 버튼에 반영됩니다 ===== */
+var CONFIG = {
+  blog:  'https://blog.naver.com/taxcentury',
+  kakao: 'http://pf.kakao.com/_ESWXG/chat',
+  // 예약 신청서를 받을 메일 (FormSubmit 인증 후, 메일로 받은 랜덤 주소로 바꾸면 메일 주소가 노출되지 않습니다)
+  formEmail: 'taxcentury@naver.com'
+};
+
+document.querySelectorAll('[data-link]').forEach(function (el) {
+  var k = el.getAttribute('data-link');
+  if (CONFIG[k]) el.href = CONFIG[k];
+});
+
+var form = document.getElementById('reserveForm');
+var msg = document.getElementById('formMsg');
+function show(type, html) { msg.className = 'msg ' + type; msg.innerHTML = html; }
+var kakaoLink = '<a href="' + CONFIG.kakao + '" target="_blank" rel="noopener" style="text-decoration:underline">카카오톡</a>';
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var missing = [];
+  if (!form['성함'].value.trim()) missing.push('성함');
+  if (!/^[0-9\-\s]{9,14}$/.test(form['연락처'].value.trim())) missing.push('연락처');
+  if (!form.querySelector('input[name="세목"]:checked')) missing.push('상담 세목');
+  if (!form.querySelector('input[name="희망시간대"]:checked')) missing.push('희망 시간대');
+  if (!document.getElementById('f-fee').checked) missing.push('수수료 안내 확인');
+  if (!document.getElementById('f-agree').checked) missing.push('개인정보 동의');
+  if (missing.length) { show('err', '다음 항목을 확인해 주세요: ' + missing.join(', ')); return; }
+
+  var data = {};
+  new FormData(form).forEach(function (v, k) { data[k] = v; });
+  data._subject = '[홈페이지] 전화상담 예약 신청 - ' + data['성함'] + ' (' + data['세목'] + ', ' + data['희망시간대'] + ')';
+  data._template = 'table';
+  data._captcha = 'false';
+
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true; btn.textContent = '전송 중...';
+  fetch('https://formsubmit.co/ajax/' + CONFIG.formEmail, {
+    method: 'POST', body: JSON.stringify(data),
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+  }).then(function (r) { return r.json(); }).then(function (res) {
+    if (String(res.success) !== 'true') throw new Error();
+    form.reset();
+    show('ok', '예약 신청이 접수되었습니다. 희망하신 시간대에 연락드리겠습니다.');
+  }).catch(function () {
+    show('err', '전송에 실패했습니다. ' + kakaoLink + '으로 문의해 주세요.');
+  }).finally(function () {
+    btn.disabled = false; btn.textContent = '예약 신청';
+  });
+});
+</script>
+</body>
+</html>
