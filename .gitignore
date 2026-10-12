@@ -5,3 +5,6 @@
 !/.gitignore
 !/.nojekyll
 !/CNAME
+!/robots.txt
+!/sitemap.xml
+!/naver*.html
