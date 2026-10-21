@@ -71,6 +71,7 @@
 
 <!-- 홈 -->
 <section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"><video id="heroVideo" muted loop playsinline preload="none" poster="https://images.pexels.com/videos/10093263/big-city-night-city-10093263.jpeg?auto=compress&w=1600&fm=jpg" data-src="https://videos.pexels.com/video-files/10093263/10093263-hd_1280_720_24fps.mp4"></video></div>
   <div class="wrap">
     <span class="eyebrow">재산세제 전문 세무사</span>
     <h1>양도 · 상속 · 증여<br><span class="box">직원이 검토하지 않습니다.</span></h1>
@@ -87,8 +88,6 @@
       <div><b>100%</b><span>대표 세무사 직접 검토</span></div>
     </div>
   </div>
-  <span class="moon" aria-hidden="true"></span>
-  <svg class="skyline" id="skyline" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
 </section>
 
 <!-- 절세 사례 -->
@@ -291,21 +290,12 @@ document.querySelectorAll('[data-link]').forEach(function (el) {
   if (CONFIG[k]) el.href = CONFIG[k];
 });
 
-/* 야경 스카이라인: 건물과 불 켜진 창문을 그립니다 (항상 같은 모양) */
+/* 야경 영상: PC에서만 재생하고, 휴대폰에서는 대표 장면 사진만 보여줍니다 */
 (function () {
-  var svg = document.getElementById('skyline'), ns = 'http://www.w3.org/2000/svg';
-  var seed = 7; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
-  function el(tag, a) { var e = document.createElementNS(ns, tag); for (var k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; }
-  for (var x = -10; x < 1210;) { var w = 40 + rnd() * 60, h = 60 + rnd() * 90; el('rect', { x: x, y: 220 - h, width: w, height: h, fill: '#3A0D0B' }); x += w - 4; }
-  for (x = -20; x < 1220;) {
-    w = 50 + rnd() * 70; h = 70 + rnd() * 120;
-    var y = 220 - h; el('rect', { x: x, y: y, width: w, height: h, fill: '#1E0605' });
-    if (rnd() > .7) el('rect', { x: x + w / 2 - 2, y: y - 18, width: 4, height: 18, fill: '#1E0605' });
-    for (var wy = y + 12; wy < 210; wy += 14) for (var wx = x + 8; wx < x + w - 10; wx += 12)
-      if (rnd() > .55) el('rect', { x: wx, y: wy, width: 6, height: 7, fill: rnd() > .3 ? '#E9B866' : '#F6D9A0', opacity: .55 + rnd() * .45 });
-    x += w + 4 + rnd() * 10;
-  }
-  el('rect', { x: 0, y: 214, width: 1200, height: 6, fill: '#140403' });
+  var v = document.getElementById('heroVideo');
+  if (!v || !matchMedia('(min-width:768px)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  v.src = v.getAttribute('data-src');
+  v.play().catch(function () {});
 })();
 
 var form = document.getElementById('reserveForm');
