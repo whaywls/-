@@ -50,7 +50,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&amp;family=Noto+Serif+KR:wght@500;700;900&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css?v=20261023">
 </head>
 <body>
 
@@ -97,23 +97,37 @@
       <span class="tag">CASES · 절세 사례</span>
       <h2 class="h2">결과로 증명합니다.</h2>
     </div>
+    <div class="case-belt">
     <div class="case-list">
-      <a class="case" href="images/case-1.png" target="_blank" rel="noopener">
-        <div class="case-img"><img src="images/case-1.png" alt="양도소득세 감면세액 1억 원 신고서" loading="lazy"></div>
-        <div class="case-body"><small>양도소득세 · 감면 적용</small><strong>1억 원 절세</strong></div>
-      </a>
-      <a class="case" href="images/case-2.png" target="_blank" rel="noopener">
-        <div class="case-img"><img src="images/case-2.png" alt="양도소득세 경정청구서 환급세액 136,862,083원" loading="lazy"></div>
-        <div class="case-body"><small>양도소득세 · 경정청구</small><strong>1.4억 원 환급</strong></div>
+      <a class="case" href="images/case-4.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-4.png" alt="양도소득세 가산세 포함 283,561,295원 절세" loading="lazy"></div>
+        <div class="case-body"><small>양도소득세 · 가산세 포함</small><strong>2.8억 원 절세</strong></div>
       </a>
       <a class="case" href="images/case-3.png" target="_blank" rel="noopener">
         <div class="case-img"><img src="images/case-3.png" alt="입주권 비과세 특례와 농어촌주택 특례 중첩 경정청구 환급세액 150,548,290원" loading="lazy"></div>
         <div class="case-body"><small>비과세 특례 중첩 · 경정청구</small><strong>1.5억 원 환급</strong></div>
       </a>
-      <a class="case" href="images/case-4.png" target="_blank" rel="noopener">
-        <div class="case-img"><img src="images/case-4.png" alt="양도소득세 가산세 포함 283,561,295원 절세" loading="lazy"></div>
-        <div class="case-body"><small>양도소득세 · 가산세 포함</small><strong>2.8억 원 절세</strong></div>
+      <a class="case" href="images/case-2.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-2.png" alt="양도소득세 경정청구서 환급세액 136,862,083원" loading="lazy"></div>
+        <div class="case-body"><small>양도소득세 · 경정청구</small><strong>1.4억 원 환급</strong></div>
       </a>
+      <a class="case" href="images/case-1.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-1.png" alt="양도소득세 감면세액 1억 원 신고서" loading="lazy"></div>
+        <div class="case-body"><small>양도소득세 · 감면 적용</small><strong>1억 원 절세</strong></div>
+      </a>
+      <a class="case" href="images/case-7.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-7.png" alt="상생임대주택 특례 경정청구 환급세액 73,182,982원" loading="lazy"></div>
+        <div class="case-body"><small>상생임대 특례 · 경정청구</small><strong>8,000만 원 절세</strong></div>
+      </a>
+      <a class="case" href="images/case-6.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-6.png" alt="농어촌주택 특례 인정, 국세청 추가 서류 요청 대응 성공" loading="lazy"></div>
+        <div class="case-body"><small>농어촌주택 특례 · 조사 대응</small><strong>2,700만 원 절세</strong></div>
+      </a>
+      <a class="case" href="images/case-5.png" target="_blank" rel="noopener">
+        <div class="case-img"><img src="images/case-5.png" alt="비사업용토지 중과세 과세예고통지에 대해 사업용토지를 증명해 14,815,852원 절세" loading="lazy" style="object-position:bottom"></div>
+        <div class="case-body"><small>과세예고통지문 · 사업용토지 증명</small><strong>1,500만 원 절세</strong></div>
+      </a>
+    </div>
     </div>
     <p class="cases-note">* 개인정보는 가림 처리되었습니다. 카드를 누르면 원본 이미지를 볼 수 있습니다.</p>
   </div>
@@ -289,6 +303,26 @@ document.querySelectorAll('[data-link]').forEach(function (el) {
   var k = el.getAttribute('data-link');
   if (CONFIG[k]) el.href = CONFIG[k];
 });
+
+/* 절세 사례: 열 때마다 순서를 섞고, PC에서는 한 줄로 천천히 흘러가게 합니다 (마우스를 올리면 멈춤) */
+(function () {
+  var list = document.querySelector('.case-list');
+  if (!list) return;
+  var cards = Array.prototype.slice.call(list.children);
+  for (var i = cards.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = cards[i]; cards[i] = cards[j]; cards[j] = t;
+  }
+  cards.forEach(function (c) { list.appendChild(c); });
+  if (!matchMedia('(min-width:641px)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  Array.prototype.slice.call(list.children).forEach(function (c) {
+    var d = c.cloneNode(true);
+    d.setAttribute('aria-hidden', 'true');
+    d.setAttribute('tabindex', '-1');
+    list.appendChild(d);
+  });
+  list.classList.add('belt');
+})();
 
 /* 야경 영상: PC에서만 재생하고, 휴대폰에서는 대표 장면 사진만 보여줍니다 */
 (function () {

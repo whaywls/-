@@ -79,6 +79,13 @@ section{padding:96px 0}
 .case-body small{font-size:14px;color:var(--ink-3)}
 .case-body strong{font-size:26px;font-weight:900;color:var(--bx-2);letter-spacing:-.01em}
 .cases-note{margin-top:20px;font-size:14px;color:var(--ink-3)}
+@media (min-width:641px){
+  .case-belt{overflow:hidden;padding:4px 0 18px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+  .case-list.belt{display:flex;width:max-content;gap:20px;animation:belt 50s linear infinite}
+  .case-list.belt .case{flex:0 0 280px}
+  .case-belt:hover .case-list.belt{animation-play-state:paused}
+}
+@keyframes belt{to{transform:translateX(calc(-50% - 10px))}}
 
 /* About */
 .about{background:#fff}
